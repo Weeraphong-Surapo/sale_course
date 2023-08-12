@@ -1,25 +1,60 @@
-import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import { createRouter, createWebHistory } from "vue-router";
+import HomeView from "../views/HomeView.vue";
 
 const routes = [
   {
-    path: '/',
-    name: 'home',
-    component: HomeView
+    path: "/",
+    name: "home",
+    component: HomeView,
   },
   {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
-  }
-]
+    path: "/about",
+    name: "about",
+    component: () => import("../views/AboutView.vue"),
+  },
+  {
+    path: "/courses",
+    name: "courses",
+    component: () => import("../views/CoursesView.vue"),
+  },
+  {
+    path: "/news",
+    name: "news",
+    component: () => import("../views/NewsView.vue"),
+  },
+  {
+    path: "/events",
+    name: "events",
+    component: () => import("../views/EventsView.vue"),
+  },
+  {
+    path: "/about",
+    name: "about",
+    component: () => import("../views/AboutView.vue"),
+  },
+  {
+    path: "/authentication",
+    name: "authentication",
+    component: () => import("../views/Auth/authentication.vue"),
+  },
+  {
+    path: "/signup",
+    name: "signup",
+    component: () => import("../views/Auth/Signup.vue"),
+  },
+  {
+    path: "/signin",
+    name: "signin",
+    component: () => import("../views/Auth/Signin.vue"),
+  },
+];
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
-  routes
-})
+  routes,
+  scrollBehavior() {
+    document.getElementById("app").scrollIntoView({ behavior: "smooth" });
+  },
+});
 
-export default router
+export default router;
