@@ -1,5 +1,5 @@
 <template>
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" data-navbar-on-scroll="light">
+    <nav class="navbar navbar-expand-lg navbar-light py-3" data-navbar-on-scroll="light">
         <div class="container">
             <a class="navbar-brand" href="index.html">
                 <img src="assets/img/icons/Logo.png" height="35" alt="logo" />
@@ -23,11 +23,13 @@
                 </ul>
                 <div v-if="authenticated">
                     <button class="btn btn-info rounded-4 btn-detail">{{ user.name }}</button>
-                    <!-- <a href="#" @click="SignAction()" class="btn btn-danger rounded-4">ออกจากระบบ</a> -->
+                    <a href="#" @click="SignAction()" class="btn btn-danger rounded-4">ออกจากระบบ</a>
                 </div>
                 <div v-else>
-                    <button @click="$router.replace({ path: 'authentication' })" class="btn btn-primary rounded-4">ล็อคอิน /
+                    <div class="show-center">
+                        <button  @click="$router.replace({ path: 'authentication' })" class="btn btn-primary rounded-4">ล็อคอิน /
                         สมัคร</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -65,6 +67,9 @@ export default {
 </script>
   
 <style scoped>
-/* Add your CSS styling for the component here */
+.show-center{
+    display: flex;
+    justify-content: center;
+}
 </style>
   

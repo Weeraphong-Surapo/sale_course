@@ -1,4 +1,5 @@
 <template lang="">
+    <router-link to="detail" >
     <div class="col-md-6">
         <div class="w-100 h-100 p-3 services-card rounded-4">
             <div class="row">
@@ -19,11 +20,9 @@
                     </div>
                 </div>
             </div>
-            <!-- <div class="row">
-            
-            </div> -->
         </div>
     </div>
+</router-link>
 </template>
 <script>
 export default {

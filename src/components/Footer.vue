@@ -54,9 +54,8 @@
                   </svg>&nbsp;by&nbsp;<a class="fw-bold text-info text-200" href="https://themewagon.com/" target="_blank">ThemeWagon </a></p>
               </div>
             </div>
-          </div><!-- end of .container-->
-        </section><!-- <section> close ============================-->
-        <!-- ============================================-->
+          </div>
+        </section>
 
     </section>
 </template>
